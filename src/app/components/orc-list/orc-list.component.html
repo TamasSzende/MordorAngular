@@ -1,0 +1,29 @@
+<h3>Orc list</h3>
+<hr>
+<table aria-describedby="List of saved orcs" class="table table-striped" id="list-table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Orc name</th>
+<!--    <th scope="col">Race</th>-->
+    <th scope="col">Kill count</th>
+    <th scope="col">Weapons</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody id="orc-list-table-body">
+  <tr *ngFor="let orc of orcs">
+    <td>{{ orc.id }}</td>
+    <td>{{ orc.name }}</td>
+<!--    <td>{{ orc.orcRaceType }}</td>-->
+    <td>{{ orc.killCount }}</td>
+    <td>{{ orc.weapons.join(', ') }}</td>
+    <td>
+      <div class="btn-group">
+        <button (click)="editOrc(orc.id)" class="btn btn-primary">edit</button>
+        <button (click)="deleteOrc(orc.id)" class="btn btn-danger">delete</button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
